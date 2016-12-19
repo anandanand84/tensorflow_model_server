@@ -31,3 +31,9 @@ docker run anandanand84/tensorflow_model_server --model_base_path=/model
 For complete example look at the example.py in the repository.
 
 You can also build a new container from this base by adding your model files in the container.
+
+```
+    FROM anandanand84/tensorflow_model_server
+    COPY /exported_model /model
+    CMD ["--model_name=modelname", "--model_base_path=/model",  "--enable_batching"]
+```
